@@ -36,7 +36,7 @@ Board: **Goouuu ESP32-S3-CAM** (ESP32-S3, 16 MB Flash, 8 MB OPI PSRAM)
 | Right Motor A  | 42   |
 | Right Motor B  | 41   |
 
-PWM frequency: 500 Hz, 8-bit resolution, max duty 160/255.
+PWM frequency: 500 Hz, 8-bit resolution, max duty 160/255 as they can be fed 8.4V instead of 6V.
 
 ---
 
@@ -49,7 +49,7 @@ PWM frequency: 500 Hz, 8-bit resolution, max duty 160/255.
 | Back Echo        | 46   |
 
 Both sensors share a single trigger pin. Reads are sequential (front then back)
-with a 300 µs settle between pulses to reduce acoustic ring-down interference.
+with a settle between pulses to reduce interference.
 
 ---
 
@@ -60,8 +60,7 @@ with a 300 µs settle between pulses to reduce acoustic ring-down interference.
 | SDA    | 38   |
 | SCL    | 39   |
 
-Configured for Medium distance mode, 30 ms timing budget, 30 ms continuous
-measurement period.
+For VL53L1X TOF, BMI160 IMU, mabye an I2C expander.
 
 ---
 
@@ -70,8 +69,6 @@ measurement period.
 | Signal      | GPIO | LEDC channel |
 |-------------|------|--------------|
 | PWM signal  | 45   | 6            |
-
-50 Hz, 8-bit resolution. Pulse range 500–2500 µs (0°–180°). Default angle 90°.
 
 ---
 
